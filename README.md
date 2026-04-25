@@ -5,7 +5,7 @@
 ### 1. Clone repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/GyanendraMani/hotel-offer-orchestrator.git
 cd hotel-offer-orchestrator
 ```
 
