@@ -11,7 +11,10 @@ export class HotelService {
 
     let hotels = await this.redisService.getHotels(city);
 
-    if (!hotels) {
+    if (hotels) {
+      console.info(`Cache hit for city: ${city}`);
+    } else {
+      console.info(`Cache miss for city: ${city} -> calling Temporal`);
       const handle = await client.workflow.start("hotelWorkflow", {
         args: [city],
         taskQueue: "hotel-task-queue",
